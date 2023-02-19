@@ -1,51 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isouaidi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 21:53:05 by isouaidi          #+#    #+#             */
-/*   Updated: 2023/02/16 10:19:14 by isouaidi         ###   ########.fr       */
+/*   Created: 2023/02/02 14:13:48 by isouaidi          #+#    #+#             */
+/*   Updated: 2023/02/02 16:53:13 by isouaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write (1, &c, 1);
+}
+	
+void	ft_print_comb(void)
+{
+	int	a;
+	int	b;
+	int	c;
+
+	a = 0 ;
+	while (a <= 7)
+	{
+		b = a + 1 ;
+		while (b <= 8)
+		{
+			c = b + 1 ;
+			while (c <= 9)
+			{
+				ft_putchar(a + '0');
+				ft_putchar(b + '0'); 
+				ft_putchar(c + '0');
+				if (a != 7)
+					write (1 , ", ", 2);
+				 c++;
+			}
+		 	b++;
+		}
+		a++;
+	}
+
 }
 
-void	ft_putnbr(int nb)
+/*int	main(void)
 {
-	int	i;
-
-	i = 0;
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		nb *= -1;
-		ft_putchar('-');
-	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + '0');
-}
-int	main( int	ac, char	**av)
-{
-	if (ac == 2)
-	{
-		ft_putnbr(atoi(av[1]));
-		ft_putchar('\n');
-	}
-}	
-
+	ft_print_comb();
+	return (0);
+}*/		 

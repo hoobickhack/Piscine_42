@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isouaidi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 17:02:43 by isouaidi          #+#    #+#             */
-/*   Updated: 2023/02/14 16:41:01 by isouaidi         ###   ########.fr       */
+/*   Created: 2023/02/18 15:13:40 by isouaidi          #+#    #+#             */
+/*   Updated: 2023/02/19 11:47:49 by isouaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-char	*ft_strncat(char	*dest, char	*src, unsigned int nb)
+void	ft_putchar(char c)
 {
-	unsigned int	i;
-	unsigned int	y;
-
-	y = 0;
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (y < nb && src[y] != '\0')
-	{
-		dest[i] = src[y];
-		i++;
-		y++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	write (1, &c, 1);
 }
-/*int	main ()
-{
-	char	dest[100] = "hello";
-	char	src[100] = "ilyes";
 
-	printf("%s",ft_strncat(dest,src,1));
-	return(0);
-}*/
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
+int	main(int ac, char **av)
+{
+	if (ac)
+		ft_putstr (av[0]);
+	write (1, "\n", 1);
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: isouaidi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 20:14:52 by isouaidi          #+#    #+#             */
-/*   Updated: 2023/02/09 10:42:07 by isouaidi         ###   ########.fr       */
+/*   Updated: 2023/02/12 15:10:50 by isouaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strcapitalize(char *str)
 	{	
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;
-		if (str[i] > 'a' && str[i] <= 'z')
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
 			if (!(str[i - 1] >= 'a' && str[i - 1] <= 'z'))
 				if (!(str[i - 1] >= 'A' && str[i - 1] <= 'Z'))

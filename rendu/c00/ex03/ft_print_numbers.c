@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isouaidi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 17:02:43 by isouaidi          #+#    #+#             */
-/*   Updated: 2023/02/14 16:41:01 by isouaidi         ###   ########.fr       */
+/*   Created: 2023/02/01 21:02:40 by isouaidi          #+#    #+#             */
+/*   Updated: 2023/02/02 08:33:38 by isouaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-char	*ft_strncat(char	*dest, char	*src, unsigned int nb)
+void	ft_print_numbers(void)
 {
-	unsigned int	i;
-	unsigned int	y;
+	int	i;
 
-	y = 0;
-	i = 0;
-	while (dest[i] != '\0')
+	i = '0';
+	while (i <= '9')
 	{
+		write (1, &i, 1);
 		i++;
 	}
-	while (y < nb && src[y] != '\0')
-	{
-		dest[i] = src[y];
-		i++;
-		y++;
-	}
-	dest[i] = '\0';
-	return (dest);
 }
-/*int	main ()
+/*int	main(void)
 {
-	char	dest[100] = "hello";
-	char	src[100] = "ilyes";
-
-	printf("%s",ft_strncat(dest,src,1));
-	return(0);
-}*/
+	ft_print_numbers();
+		return(0);
+}*/	

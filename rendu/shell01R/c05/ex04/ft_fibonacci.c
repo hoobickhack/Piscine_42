@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isouaidi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 17:02:43 by isouaidi          #+#    #+#             */
-/*   Updated: 2023/02/14 16:41:01 by isouaidi         ###   ########.fr       */
+/*   Created: 2023/02/13 14:58:13 by isouaidi          #+#    #+#             */
+/*   Updated: 2023/02/18 12:32:26 by isouaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strncat(char	*dest, char	*src, unsigned int nb)
+int	ft_fibonacci(int index)
 {
-	unsigned int	i;
-	unsigned int	y;
-
-	y = 0;
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (y < nb && src[y] != '\0')
-	{
-		dest[i] = src[y];
-		i++;
-		y++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	if (index < 0)
+		return (-1);
+	if (index == 0)
+		return (0);
+	if (index == 1)
+		return (1);
+	else
+		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
-/*int	main ()
+/*int	main()
 {
-	char	dest[100] = "hello";
-	char	src[100] = "ilyes";
-
-	printf("%s",ft_strncat(dest,src,1));
+	printf("%d", ft_fibonacci(12));
 	return(0);
 }*/

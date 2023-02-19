@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isouaidi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 17:02:43 by isouaidi          #+#    #+#             */
-/*   Updated: 2023/02/14 16:41:01 by isouaidi         ###   ########.fr       */
+/*   Created: 2023/02/18 14:46:09 by isouaidi          #+#    #+#             */
+/*   Updated: 2023/02/18 14:59:30 by isouaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strncat(char	*dest, char	*src, unsigned int nb)
+int	ft_sqrt(int nb)
 {
-	unsigned int	i;
-	unsigned int	y;
+	int	x;
 
-	y = 0;
-	i = 0;
-	while (dest[i] != '\0')
+	x = 1;
+	while (x <= 46340)
 	{
-		i++;
+		if (x * x == nb)
+			return (x);
+		x++;
 	}
-	while (y < nb && src[y] != '\0')
-	{
-		dest[i] = src[y];
-		i++;
-		y++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }
-/*int	main ()
+/*int   main()
 {
-	char	dest[100] = "hello";
-	char	src[100] = "ilyes";
-
-	printf("%s",ft_strncat(dest,src,1));
-	return(0);
+    printf("Resultat : %d\n", ft_sqrt(8));
+    return (0);
 }*/
